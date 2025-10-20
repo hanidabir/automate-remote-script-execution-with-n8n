@@ -152,25 +152,3 @@ From now on, **n8n will automatically execute your script** on schedule 🚀
   ```bash
   ssh -i /home/node/.ssh/n8n_ssh_key root@domain.com 'echo test'
   ```
-
----
-
-## ✅ Workflow Summary
-
-| Component                   | Description                           |
-| --------------------------- | ------------------------------------- |
-| `Remote Script Runner.json` | The n8n workflow file                 |
-| `remote-server-ssh`         | SSH credential for the remote server  |
-| Scheduler                   | Triggers workflow automatically       |
-| Executer                    | Executes command via SSH              |
-| Exporter                    | Parses and outputs JSON or plain text |
-
----
-
-## Use Cases
-
-* Automating cross-server backups
-* Cleaning temporary or cached files
-* Automatically restarting services or containers
-* Running monitoring or health-check scripts
-* A visual, easy-to-manage alternative to cronjobs
