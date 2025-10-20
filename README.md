@@ -6,17 +6,6 @@ This guide explains how to use **n8n** to connect to any Linux server, run your 
 The workflow is **generic** — it can be used for any automation tasks such as backups, monitoring, cleanup, service restarts, etc.
 
 ---
-## Workflow Summary
-
-| Component                   | Description                           |
-| --------------------------- | ------------------------------------- |
-| `Remote Script Runner.json` | The n8n workflow file                 |
-| `remote-server-ssh`         | SSH credential for the remote server  |
-| Scheduler                   | Triggers workflow automatically       |
-| Executer                    | Executes command via SSH              |
-| Exporter                    | Parses and outputs JSON or plain text |
-
----
 
 ## Use Cases
 
@@ -28,3 +17,14 @@ The workflow is **generic** — it can be used for any automation tasks such as 
 
 ---
 [English Version](https://github.com/hanidabir/automate-remote-script-execution-with-n8n/blob/main/docs/en.md) | [نسخه فارسی](https://github.com/hanidabir/automate-remote-script-execution-with-n8n/blob/main/docs/fa.md)
+
+---
+## Workflow Summary
+
+| Component                   | Description                           |
+| --------------------------- | ------------------------------------- |
+| `Remote Script Runner.json` | The n8n workflow file                 |
+| `remote-server-ssh`         | SSH credential for the remote server  |
+| Scheduler                   | Triggers workflow automatically       |
+| Executer                    | Executes command via SSH              |
+| Exporter                    | Parses and outputs JSON or plain text |
