@@ -25,3 +25,6 @@ The workflow is **generic** — it can be used for any automation tasks such as 
 * Automatically restarting services or containers
 * Running monitoring or health-check scripts
 * A visual, easy-to-manage alternative to cronjobs
+
+---
+[English Version](https://github.com/hanidabir/automate-remote-script-execution-with-n8n/blob/main/docs/en.md) | [نسخه فارسی](https://github.com/hanidabir/automate-remote-script-execution-with-n8n/blob/main/docs/fa.md)
