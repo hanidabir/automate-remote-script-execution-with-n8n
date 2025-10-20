@@ -1,12 +1,3 @@
-# Automate Remote Script Execution with n8n  
-*(Schedule and run any command or script on a remote server via SSH)*
-
-This guide explains how to use **n8n** to connect to any Linux server, run your desired script or command on a schedule, and optionally process the output for further automation.
-
-The workflow is **generic** — it can be used for any automation tasks such as backups, monitoring, cleanup, service restarts, etc.
-
----
-
 ## Overview
 
 1. Generate SSH key on the n8n server  
