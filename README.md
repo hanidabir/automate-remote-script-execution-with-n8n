@@ -6,7 +6,7 @@ This guide explains how to use **n8n** to connect to any Linux server, run your 
 The workflow is **generic** — it can be used for any automation tasks such as backups, monitoring, cleanup, service restarts, etc.
 
 ---
-## ✅ Workflow Summary
+## Workflow Summary
 
 | Component                   | Description                           |
 | --------------------------- | ------------------------------------- |
