@@ -1,0 +1,68 @@
+{
+  "name": "Remote Script Runner",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "months",
+              "mode": "everyMonth",
+              "value": 1
+            }
+          ]
+        }
+      },
+      "id": "scheduler",
+      "name": "Scheduler",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "command": "bash /root/your_script.sh",
+        "sshAuthentication": "privateKey",
+        "timeout": 3600
+      },
+      "id": "executer",
+      "name": "Executer",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [500, 300],
+      "credentials": {
+        "sshKey": {
+          "id": "",
+          "name": "remote-server-ssh"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "JavaScript",
+        "jsCode": "const raw = $node['Executer'].json['stdout'] || '';\nconst start = raw.indexOf('{');\nconst end = raw.lastIndexOf('}');\nif (start === -1 || end === -1) {\n  return [{ json: { status: 'ok', message: raw.trim().slice(0, 200), host: 'remote-server' } }];\n}\nconst jsonText = raw.substring(start, end + 1);\nreturn [{ json: JSON.parse(jsonText) }];"
+      },
+      "id": "exporter",
+      "name": "Exporter",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [750, 300]
+    }
+  ],
+  "connections": {
+    "Scheduler": {
+      "main": [ [ { "node": "Executer", "type": "main", "index": 0 } ] ]
+    },
+    "Executer": {
+      "main": [ [ { "node": "Exporter", "type": "main", "index": 0 } ] ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "template": "remote-script-runner",
+    "description": "Generic workflow for running any remote server script on schedule via SSH"
+  }
+}
